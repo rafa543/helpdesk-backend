@@ -11,18 +11,18 @@ import com.rafael.helpdesk.services.DBService;
 @Configuration
 @Profile("dev")
 public class DevConfig {
-	
+
 	@Autowired
 	private DBService dbService;
-	
-	@Value("${spring.jpa.hibernate.ddl-auto}")
-	private String value;
-	
+
+//	@Value("${spring.jpa.hibernate.ddl-auto}")
+//	private String value;
+
 	@Bean
-	public boolean instanciaDB() {
-		if(value.equals("create")) {
-			this.dbService.instanciaDbB();
-		}
-		return false;
+	public void instanciaDB() {
+//		if(value.equals("create")) {
+		this.dbService.instanciaDbB();
+//		}
+//		return false;
 	}
 }
